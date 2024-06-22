@@ -1,6 +1,5 @@
 import openql as ql
 import os
-import random  # Importing the random module to simulate measurement results
 
 # Initialize the OpenQL framework
 ql.initialize()
@@ -54,25 +53,3 @@ program.add_kernel(dj_kernel)
 program.compile()
 
 print("Deutsch-Jozsa Algorithm program compiled successfully.")
-
-# Simulate measurement results
-def simulate_measurement_results(n):
-    """
-    Simulates measurement results for the Deutsch-Jozsa algorithm.
-    
-    :param n: Number of qubits
-    :return: List of measurement results
-    """
-    return [random.randint(0, 1) for _ in range(n-1)]
-
-# Simulate the results (assuming we have a function to simulate measurement results)
-results = simulate_measurement_results(n)
-
-# Display the results
-print("Measurement results of input qubits: ", results)
-
-# Explain the result
-if all(result == 0 for result in results):
-    print("The function is constant.")
-else:
-    print("The function is balanced.")
